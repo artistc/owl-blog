@@ -1,0 +1,41 @@
+{% load blog_tags %}
+<div class="article-stub" onclick="location.href='/{{article.slug}}/';">
+	{% block thumbnail %}
+		{% if article.lead_photo %}
+			<img class="article-stub-thumbnail" src="{{article.lead_photo.url_75x75}}" alt="thumbnail">
+		{% endif %}
+	{% endblock thumbnail %}
+
+	{%block title %}
+		<a href="/{{article.slug}}/" class="article-stub-title"> {{ article.title }} </a>
+	{% endblock title %}
+	
+	{% block date %}
+		<small class="article-stub-date">
+			{{article.date_time_added|date:"F jS Y"}}
+		</small>
+	{% endblock date %}
+
+	{% block published %}
+		{%if not article.published%}<strong>NOT YET PUBLISHED</strong>{% endif %}
+	{% endblock published %}
+	
+	{% block tease %}
+		<small class="article-stub-teaser">
+			{{article.content|stripmarkup|truncatewords:"15"}}
+		</small>
+	{% endblock tease %}
+
+	{% block tag_list %}
+		{% if article.tag_set.all %}
+			{% block tags %}
+				<small class="article-stub-tags">
+					{% for intag in article.tag_set.all %} <a href="/tag/{{intag.slug}}/">{{intag.title}}</a> {% endfor %}
+				</small>
+			{% endblock tags %}
+		{% endif %}
+	{% endblock tag_list %}
+	
+	
+	{% block extra %}{% endblock extra %}
+</div>

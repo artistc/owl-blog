@@ -1,0 +1,23 @@
+{% load blog_tags %}
+<form method="post" action="/{{article.slug}}/leave-comment/" class="leave-comment-form">
+  {% csrf_token %}
+  <div>
+    Your Name: <br>
+    {{comment_form.errors.user_name|error_list}}
+    {{comment_form.user_name}}
+  </div>
+  <div>
+    Comment: <br>
+    {{comment_form.errors.content|error_list}}
+    {{comment_form.content}}
+  </div>
+  <div>
+    Enter this phrase: <br>
+    {{comment_form.errors.captcha|error_list}}
+    <img src="/static/site/images/captcha.png" alt="captcha">
+    {{comment_form.captcha}} 
+  </div>
+  <div>
+    <input class="submit-button" type="submit" value="Leave Comment">
+  </div>
+</form>

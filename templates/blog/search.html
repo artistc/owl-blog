@@ -1,0 +1,61 @@
+{% extends "blog/base.html" %}
+{% load blog_tags %}
+
+{% block title %}{{article.title}}Search{% endblock title %}
+
+{% block quick_search %}{% endblock quick_search %}
+
+{% block main %}
+	
+	{% block search_form %}
+		<form method="get" action="/search/">
+			<h1>Search</h1>
+			<div>	
+				{{search_form.keyword}}
+				<input type="submit" class="search-submit-button" value="Search">
+				<br>
+				{% if left_blank %}
+					<small class="error">[Enter at least one keyword.]</small> <br>
+				{% endif %}
+				<small>You may use AND and OR to form complex queries.</small>
+			</div>
+		{% if not keyword %}
+		<script type="text/javascript" type="text/javascript">
+			document.getElementById("id_keyword").focus();
+		</script>
+		{% endif %}
+		
+		<div class="search-tag-filters">
+			{% for field in search_form.include_fields %}
+				<div class="search-tag-filter">
+					<small>
+						{{field}}{{field.label}}
+					</small>
+				</div>
+			{% endfor %}
+			<br style="clear:both;">
+		</div>
+		
+		</form>
+	{% endblock search_form %}
+	
+	{% block results %}
+		{% if keyword %}
+			<div>
+				<h1>{{results.count}} Results For "{{keyword}}" </h1>
+				<ul class="index">
+					{% for article in results %}
+						<li>
+							{{article|stub}}
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
+	{% endblock results %}
+
+    <p>
+      Not finding anything?  You could try the <a href="/archive/">archives</a> or look for a <a href="/tags/">tag</a>.
+    </p>
+	
+{% endblock main %}

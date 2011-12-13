@@ -1,0 +1,16 @@
+{% if article %}
+  {% include "blog/article_content.html" %}
+  <p>
+    {% include "blog/link_to_comments.html" %}
+  </p>
+{% else %}
+    <h1>Postscript</h1>
+    <p id="the-last-page-of-the-internet">
+        It seems I've run out of things to say.  Thanks for reading!
+    </p>
+    <p>
+      <span class="signature">- Oran Looney</span>
+    </p>
+
+{% endif %}
+

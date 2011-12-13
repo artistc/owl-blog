@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+{% load blog_tags %}
+
+{% block title %}{{article.title}}{% endblock title %}
+
+{% block main %}
+  {% include "blog/article_content.html" %}
+{% endblock main %}
+{% block after_main %}
+  {% block comments %}
+  <div class="content-page comments" style="border-top: none">
+    <a name="comments"></a>
+    {% if comments.count %}
+	  <h1>Comments ({{comments.count}})</h1>
+      <div>
+        {% for comment in comments %}
+          {{comment|stub}}
+        {% endfor %}
+      </div>
+    {% endif %}
+    <h1>Leave a Comment</h1>
+    {% include "blog/comment_form.html" %}
+  </div>
+  {% endblock comments %}
+{% endblock after_main %}

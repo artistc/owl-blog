@@ -1,0 +1,6 @@
+{% load humanize %}
+	{% if article.comment_set.count %}
+	Read <a href="http://oranlooney.com/{{article.slug}}/#comments" title="read and leave comment">{{article.comment_set.count|apnumber}} comment{{article.comment_set.count|pluralize}}</a> on this essay or <a href="http://oranlooney.com/{{article.slug}}/#comments" title="read and leave comment">leave your own</a>.
+	{% else %}
+	  Be the <a href="http://oranlooney.com/{{article.slug}}/#comments" title="read and leave comment">first to comment on this article</a>!
+	{% endif %}

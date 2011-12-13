@@ -1,0 +1,16 @@
+/* style the article for printing. */
+
+* {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	text-shadow: none !important;
+}
+
+#banner, .content-page {
+	border: none;
+}
+
+#sidebar {
+	display: none;
+}

@@ -1,0 +1,439 @@
+@import url(yui-reset-min.css);
+
+html, body, * {
+font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+}
+body, html {
+	background-color: #999;
+}
+em {
+	font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+    font-style: italic;
+    font-weight: bold;
+}
+strong {
+	font-family: Verdana, sans-serif;
+    color: red;
+    font-weight: bold;
+}
+#banner {
+	/* these should match the content-page so everything lines up. */
+	/*margin: 0px 5px 0px 55px; todo*/
+    margin: 0 auto;
+	width: 500px;
+	padding: 0.2em 75px 0.5em;
+	border-left: 1px solid #666;
+	border-right: 1px solid #666;
+
+	text-align: center;
+	background-image: url(../images/books.png);
+	background: url(../images/books.png) top left no-repeat, url(../images/calculus.png) top right no-repeat;
+	background-repeat: no-repeat;
+	background-color: #800000;
+
+	-moz-box-shadow: 3px 3px 3px #666;
+	-webkit-box-shadow: 3px 3px 3px #666;
+	box-shadow: 3px 3px 3px #666;
+}
+#banner a {
+	display: block;
+	line-height: 1.1em;
+	font-size: 3em;
+	font-style: italic;
+	color: white;
+	text-shadow: 2px 2px 2px #000;
+	text-decoration: none;
+}
+#banner h6 {
+	font-size: 1.4em;
+	font-style: italic;
+	color: white;
+	text-shadow: 2px 2px 2px #000;
+}
+
+#quick-search {
+    position: relative;
+    right: 385px;
+	margin: 0 2px 1ex;
+}
+#quick-search input {
+	width: 85px;
+	padding-left: 19px;
+	background-image: url(../icons/maroon_search.png);
+	background-repeat: no-repeat;
+	background-position: 2px 2px;
+	font-size: 12px;
+	font-style: normal;
+	height: 18px;
+	line-height: 18px;
+	font-family: Verdana, sans-serif;
+	border: 2px inset #ccc;
+
+	-moz-box-shadow: 2px 2px 2px #666;
+	-webkit-box-shadow: 2px 2px 2px #666;
+	box-shadow: 2px 2px 2px #666;
+}
+#quick-search button {
+	display: none;
+}
+
+#sidebar {
+	/* margin: 1em 5px 10px 0px; todo */
+    position: absolute;
+    left: 50%;
+    padding-top: 5em;
+}
+
+/* Menu style */
+ul.menu {
+    position: relative;
+    right: 385px;
+	list-style-type: none;
+	font-style: italic;
+}
+ul.menu li {
+	display: block;
+	width: 110px;
+	background-color: #fdfdfd;
+	background-repeat: no-repeat;
+	border-top: 1px solid #ccc;
+
+	-moz-box-shadow: 2px 2px 2px #666;
+	-webkit-box-shadow: 2px 2px 2px #666;
+	box-shadow: 2px 2px 2px #666;
+}
+ul.menu li:hover {
+	position: relative;
+    left: -1px;
+	top: -2px;
+	-moz-box-shadow: 3px 3px 3px #666;
+	-webkit-box-shadow: 3px 3px 3px #666;
+	box-shadow: 3px 3px 3px #666;
+}
+ul.menu li a {
+	display: block;
+	margin-left: 2px;
+	padding: 2px 2px 2px 27px;
+	text-decoration: none;
+	color: #000000;
+}
+ul.menu a:hover, ul.menu a:active,ul.menu a:visited:hover,ul.menu a:active:hover {
+	color: #000000;
+	text-decoration: none;
+}
+ul.menu li.menu_break {
+	display: none;
+}
+
+#main-wrapper {
+	padding-bottom: 2em;
+}
+.content-page {
+	color: #282828;
+	font-size: 13px;
+	line-height: 21px;
+	display: block;
+	/*margin: 0px 5px 20px 55px; todo*/
+    margin: 0 auto 20px;
+	width: 500px;
+	padding: 25px 75px;
+	background-image: url(../images/brain.png);
+	background-position: 530px 8px;
+	background-repeat: no-repeat;
+	background-color: #fdfdfd;
+	border: 1px solid #777;
+
+	-moz-box-shadow: 3px 3px 3px #666;
+	-webkit-box-shadow: 3px 3px 3px #666;
+	box-shadow: 3px 3px 3px #666;
+}
+/* h1 and a.title look the same.  Use a.title if you want the page title to be a link. */
+.content-page h1 {
+	margin: .8em 0 0 0;
+	font-size: 1.7em;
+	text-align: center;
+	font-weight: bold;
+	color: #800000;
+	padding-bottom: 1ex;
+	border-bottom: 1px solid #800000;
+	margin-bottom: 1ex;
+}
+.content-page a.title {
+	display: block;
+	margin: .8em 0 0 0;
+	font-size: 1.7em;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+	color: #800000;
+	padding-bottom: 1ex;
+	border-bottom: 1px solid #800000;
+	margin-bottom: 1ex;
+}
+
+.content-page h2 {
+	margin: .8em 0 0 0;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #800000;
+}
+.content-page img {
+	display: block;
+	border: none;
+	margin: .5em auto;
+	-moz-border-radius: .6em;
+	border-radius: .6em;
+}
+.content-page img.small {
+	float: right;
+	padding: 0;
+	margin: .4em 0 .5em .4em;
+	-moz-border-radius: .3em;
+	border-radius: .3em;
+}
+.content-page a {
+	color: #800000;
+	font-family: Verdana, sans-serif;
+}
+.content-page p {
+	margin: .2em 0 .8em 0;
+	font-family: Verdana, sans-serif;
+	font-style: normal;
+}
+.content-page ul {
+	list-style-type: none;
+    padding-left: 1ex;
+}
+.content-page ul li {
+	background-image: url(../images/bullet_point.png);
+	background-repeat: no-repeat;
+	background-position: 0 2px;
+	padding-left: 20px;
+}
+.content-page ul li li {
+	background-image: url(../images/inner_bullet_point.png);
+}
+.content-page ul li li li {
+	background-image: url(../images/innermost_bullet_point.png);
+}
+.content-page ol {
+	list-style: decimal inside;
+    padding-left: 1ex;
+}
+.content-page ol li {
+	list-style: decimal inside;
+    display: list-item;
+}
+/* shared styles for ul and ol items */
+.content-page li {
+	margin: 1em 0 1em;
+	font-size: 13px;
+	line-height: 17px;
+	font-family: Verdana, sans-serif;
+}
+
+.content-page code {
+	font-family: "Bitstream Vera Sans Mono", monospace;
+	font-style: normal;
+    font-weight: bold;
+	color: #005500;
+}
+.content-page pre {
+	padding-left: 1ex;
+	margin-left: 1ex;
+	margin-bottom: 1ex;
+}
+.content-page pre code {
+    font-size: .9em;
+}
+
+.content-page blockquote {
+	width: 400px;
+	background-image: url(../images/quote_left.png);
+	background: url(../images/quote_left.png) top left no-repeat, url(../images/quote_right.png) bottom right no-repeat;
+	background-repeat: no-repeat;
+	font-size: 1.3em;
+	font-style: italic;
+	text-indent: 1em;
+	padding: 50px 50px 35px;
+	margin: .2em auto;
+}
+.content-page blockquote p {
+	font-style: italic;
+	font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+}
+.content-page blockquote a {
+    font-size: .85em;
+}
+
+a:link, a:visited, a:active {
+}
+
+ul.index {
+	display: block;
+}
+ul.index li {
+	display: block;
+	margin: 0 0 75px;
+	padding: 0;
+}
+
+.article-stub {
+	position: relative;
+	padding: 0 0 0 85px;
+	height: 75px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+/* needs a stronger rule to override the img styles. */
+.article-stub .article-stub-thumbnail {
+	position: absolute;
+	display: block;
+	left: 0px;
+	top: 0px;
+	color: #282828;
+}
+.article-stub:hover .article-stub-thumbnail {
+	left: -3px;
+	top: -3px;
+	-moz-box-shadow: 3px 3px 3px #666;
+	-webkit-box-shadow: 3px 3px 3px #666;
+	box-shadow: 3px 3px 3px #666;
+}
+
+body .article-stub-title {
+	color: #800000;
+	font-size: 1.2em;
+	text-decoration: none;
+	font-style: normal;
+	font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+}
+
+.article-stub-tags {
+	display: block;
+	font-size: 0.9em;
+}
+.article-stub-tags a {
+	margin-right: 1em;
+}
+
+.article-stub-date {
+	display: block;
+	font-size: 0.8em;
+	color: #999;
+	padding: .2em 0 0 0;
+}
+.article-stub-teaser {
+	display: block;
+	font-size: 0.9em;
+	font-family: Verdana, sans-serif;
+	padding: 3px 0 5px;
+}
+
+#login-form {
+	padding-bottom: 25em;
+}
+#login-form label {
+	display: block;
+	width: 100px;
+	float: left;
+}
+#login-form .form-row {
+	margin-bottom: 5px;
+}
+#login-form .submit-row input {
+	padding: 1px 3px;
+	font-style: italic;
+}
+.search-submit-button {
+	padding: 1px 3px;
+	font-style: italic;
+}
+.submit-button {
+	padding: 1px 3px;
+	font-style: italic;
+}
+.leave-comment-form div {
+	margin-bottom: 1ex;
+}
+.leave-comment-form img {
+	margin: 3px 0;
+}
+.error {
+	color: red;
+}
+
+.search-tag-filter {
+	width: 150px;
+	float: left;
+}
+
+.article-tags a {
+	margin-right: 1em;
+}
+
+.signature {
+	margin-left: 300px;
+	font-size: 1em;
+	font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+	font-style: italic;
+}
+.signature-date {
+	font-size: 0.8em;
+	color: #999;
+}
+
+.thank-you {
+	margin-top: 1ex;
+	padding-top: 1ex;
+	border-top: 1px solid #800000;
+	height: 70px;
+	padding-left: 69px;
+	position: relative;
+}
+
+a.big-rss-link {
+	display: block;
+	position: absolute;
+	top: 10px;
+	left: 0px;
+	width: 59px;
+	height: 58px;
+	background-image: url(../images/rss.png);
+	text-indent: -999em;
+}
+a.big-rss-link:hover {
+	top: 7px;
+	left: -3px;
+	width: 62px;
+	height: 61px;
+	background-image: url(../images/rss_shadow.png);
+}
+
+.comment {
+    margin-bottom: 2em;
+}
+.comment h4 {
+    font-size: 1.1em;
+}
+.comment .comment-username {
+    font-weight: bold;
+}
+.comment .comment-date {
+	display: block;
+	font-size: 0.8em;
+	color: #999;
+	padding: .2em 0 0 0;
+    float: right;
+}
+.comment p {
+	background-image: url(../images/quote_left.png);
+	background: url(../images/quote_left.png) top left no-repeat, url(../images/quote_right.png) bottom right no-repeat;
+	background-repeat: no-repeat;
+	padding: 50px 50px 35px;
+    font-style: italic;
+}
+
+/* auto-generated below this point */

@@ -1,0 +1,84 @@
+.menu_about_me {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px 4px;
+}
+.menu_about_site {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -28px;
+}
+.menu_admin {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -60px;
+}
+.menu_analytics {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -92px;
+}
+.menu_back {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -124px;
+}
+.menu_bookshelf {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -156px;
+}
+.menu_edit {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -188px;
+}
+.menu_home {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -220px;
+}
+.menu_index {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -252px;
+}
+.menu_login {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -284px;
+}
+.menu_logout {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -316px;
+}
+.menu_new {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -348px;
+}
+.menu_next {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -380px;
+}
+.menu_previous {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -412px;
+}
+.menu_resume {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -444px;
+}
+.menu_review {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -476px;
+}
+.menu_rss_feed {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -508px;
+}
+.menu_search {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -540px;
+}
+.menu_sig {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -572px;
+}
+.menu_tags {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -604px;
+}
+.menu_validate {
+    background-image:url(/static/site/icons/master.gif);
+    background-position: 6px -636px;
+}

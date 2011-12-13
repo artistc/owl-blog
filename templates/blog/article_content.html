@@ -1,0 +1,27 @@
+<a href="/{{article.slug}}/" class="title">{{article.title}}</a>
+{% if article.lead_photo %}
+  {% if article.lead_photo_link %}
+    <a href="{{article.lead_photo_link}}">
+      <img alt="colorful lead photo" src="{{article.lead_photo.url}}">
+    </a>
+  {% else %}
+    <img alt="colorful lead photo" src="{{article.lead_photo.url}}">
+  {% endif %}
+{% endif %}
+<div>
+  {{article.get_expanded_content|safe}}
+</div>
+<p>
+  <span class="signature">- Oran Looney</span>
+  <span class="signature-date">{{article.date_time_added|date:"F jS Y"}}</span>
+</p>
+  <p class="thank-you">
+    Thanks for reading.  Please subscribe to the <a href="/feeds/blog/">RSS feed</a> and remember that
+    future readers will thank you for leaving your comments and criticisms.
+    <a href="/feeds/blog/" title="Subscribe to RSS Feed" class="big-rss-link">Subscribe to RSS Feed</a>
+  </p>
+<p class="article-tags">
+    {% for intag in article.tag_set.all %} 
+        <a href="/tag/{{intag.slug}}/">{{intag.title}}</a> 
+    {% endfor %}
+</p>

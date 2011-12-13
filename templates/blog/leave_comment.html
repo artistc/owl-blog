@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+{% load blog_tags %}
+
+{% block title %}{{article.title}} - Leave Comment{% endblock title %}
+
+{% block sidebar %}
+<li class="menu_back">
+	<a href="/{{article.slug}}/">Back</a>
+</li>
+{% endblock sidebar %}
+
+{% block main %}
+
+<h1>Commenting on "{{ article.title }}"</h1>
+{% include "blog/comment_form.html" %}
+
+
+{% endblock main %}

@@ -1,0 +1,32 @@
+{% with obj as article %}
+  <a href="http://oranlooney.com/{{article.slug}}/" class="title">read this essay with its original formatting</a><br>
+  {% if article.lead_photo %}
+    <img src="http://oranlooney.com{{article.lead_photo.url}}" alt="colorful lead photo">
+  {% endif %}
+  <div>
+    {{article.get_expanded_content|safe}}
+  </div>
+  <p>
+    <div class="signature">- Oran Looney</div>
+  </p>
+  <p class="thank-you">
+    Thanks for reading.
+  </p>
+
+  <p>
+    {% include "blog/link_to_comments.html" %}
+  </p>
+
+  {% if article.tag_set.count %}
+    <p class="article-tags">
+      Tags: 
+      {% for intag in article.tag_set.all %} 
+          <a href="http://oranlooney.com/tag/{{intag.slug}}/">{{intag.title}}</a> 
+      {% endfor %}
+    </p>
+  {% endif %}
+
+  <p>
+	Browse the complete <a href="http://oranlooney.com/archive/" alt="older essays" title="older posts">archive</a> at <a href="http://oranlooney.com/">OranLooney.com</a>
+  </p>
+{% endwith %}

@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% load blog_tags %}
+
+{% block title %}Archive{% endblock title %}
+{% block main %}
+  <h1>Archive</h1>
+  <ul class="index">
+  {% for article in articles %}
+    <li>
+	  {{article|stub}}
+    </li>
+  {% endfor %}
+  </ul>
+  <p>Articles are also <a href="/tags/">grouped by tag</a>.</p>
+{% endblock main %}

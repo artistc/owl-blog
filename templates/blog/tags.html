@@ -1,0 +1,24 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Tags{% endblock title %}
+
+{% block main %}
+	<h1>Tags</h1>
+	<p>
+		Each essay has a couple tags indicating subject area.
+		Choose a tag to see all essays with that tag.
+	</p>
+	{% for tag in tags %}
+		<ul>
+			<li>
+				<a href="/tag/{{tag.slug}}/"> 
+					{{tag.title}} ({{tag.articles.count}})
+				</a>
+			</li>
+		</ul>
+	{% endfor %}
+	<p>
+      Didn't find what you were looking for?
+      Try the <a href="/archive/">archives</a>.
+	</p>
+{% endblock main %}

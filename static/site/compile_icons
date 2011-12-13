@@ -1,0 +1,19 @@
+#!/bin/bash
+# rolls the png icon css up into the main css file.
+echo 'Making Master Images and CSS'
+echo '---------------------------'
+cd icons
+python make_master.py
+cd ..
+echo 'Done Making Master and CSS.'
+echo
+
+echo -n 'Making main.css...'
+cat css/base.css icons/icons_png.css > css/main.css
+rm icons/icons_png.css
+echo 'done!'
+
+echo -n 'getting icons_gif.css...'
+mv icons/icons_gif.css css
+echo 'done!'
+

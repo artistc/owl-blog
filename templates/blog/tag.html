@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+{% load blog_tags %}
+
+{% block title %}{{tag.title}} Tag{% endblock title %}
+
+{% block main %}
+  <h1>{{tag.title}} Tag</h1>
+  <ul class="index">
+  {% for article in articles %}
+    <li>
+	  {{article|stub}}
+    </li>
+  {% endfor %}
+  </ul>
+  <p>
+    Didn't find what you were looking for? Try another <a href="/tags/">tag</a>
+    or the <a href="/archive/">archives</a>.
+  </p>
+{% endblock main %}
