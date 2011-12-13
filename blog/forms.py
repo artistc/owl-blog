@@ -16,12 +16,6 @@ class CommentForm(forms.Form):
         except Article.DoesNotExist:
             raise forms.ValidationError('The comment is not linked to a valid article.')
 
-    def clean_content(self):
-        content = self.cleaned_data['content']
-        if profanityPattern.search(content):
-            raise forms.ValidationError('This field may not contain profanity.')
-        return content
-
     def clean_user_name(self):
         name = self.cleaned_data['user_name']
         if 'oran' in name or 'oren' in name or 'looney' in name or 'loony' in name:
@@ -29,9 +23,10 @@ class CommentForm(forms.Form):
         return name
 
     def clean_captcha(self):
+        expectedCaptcha = 'iamnotabot'
         normalizedCaptcha = self.cleaned_data['captcha'].replace(' ','').replace('.', '').lower()
-        if normalizedCaptcha != 'iamnotabot':
-            raise forms.ValidationError('This field must match the image.')
+        if normalizedCaptcha != expectedCaptcha:
+            raise forms.ValidationError('This field must match the image')
         else:
             return self.cleaned_data['captcha']
 

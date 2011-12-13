@@ -1,5 +1,5 @@
 from models import Article, Tag, Comment
-from django.template import Context, loader
+from django.template import RequestContext, Context, loader
 from django import forms
 from django.shortcuts import get_object_or_404, render_to_response
 from django.http import HttpResponse, Http404, HttpResponseRedirect, QueryDict
@@ -78,7 +78,7 @@ def article(request,slug):
     comment_form = CommentForm()
     
     template = loader.get_template('blog/article.html')
-    context = Context( locals() )
+    context = RequestContext(request, locals() )
     html = template.render(context)
     return HttpResponse(html)
 
@@ -100,7 +100,7 @@ def leave_comment(request, slug):
 
     return render_to_response(
         'blog/leave_comment.html',
-        Context(dict(comment_form=comment_form, article=article)) )
+        RequestContext(request, dict(comment_form=comment_form, article=article)) )
     
 
 
